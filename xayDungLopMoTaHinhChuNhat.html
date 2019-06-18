@@ -16,16 +16,22 @@
         this.dai = dai;
         this.rong = rong;
         this.getDai = function () {
-            return dai;
+            return this.dai;
         };
         this.getRong = function () {
-            return rong;
+            return this.rong;
         };
         this.getDienTich = function () {
-            return rong * dai;
+            return this.rong * this.dai;
         };
         this.getChuVi = function () {
-            return (rong + dai)* 2;
+            return (this.rong + this.dai)* 2;
+        };
+        this.setRong = function (rong) {
+            this.rong = rong;
+        };
+        this.setDai = function (dai) {
+            this.dai = dai;
         };
         this.getRect= function () {
             var ctx = document.getElementById("myCanvas");
@@ -45,6 +51,17 @@
     alert("chu vi :"+ chuVi+ "dien tích:"+ dienTich);
     tinh.getRect();
 
+    tinh.setRong(100);
+    tinh.setDai(120);
+
+    dienTich = tinh.getDienTich();
+
+    chuVi = tinh.getChuVi();
+
+
+
+
+    alert("chu vi :"+ chuVi+ "dien tích:"+ dienTich);
 
 
 </script>
