@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập hình chứ nhật</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="1500px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+
+<script>
+
+
+
+    function Rectangle(dai, rong) {
+        this.dai = dai;
+        this.rong = rong;
+        this.getDai = function () {
+            return dai;
+        };
+        this.getRong = function () {
+            return rong;
+        };
+        this.getDienTich = function () {
+            return rong * dai;
+        };
+        this.getChuVi = function () {
+            return (rong + dai)* 2;
+        };
+        this.getRect= function () {
+            var ctx = document.getElementById("myCanvas");
+            var hinhChuNhat = ctx.getContext("2d");
+
+            hinhChuNhat.fillStyle = "#ff0000";
+            hinhChuNhat.fillRect(100, 100, 150, 75);
+            hinhChuNhat.fill();
+        };
+    }
+
+    let tinh= new Rectangle(5,6);
+    let rong= tinh.getRong();
+    let dai= tinh.getDai();
+    let dienTich= tinh.getDienTich();
+    let chuVi= tinh.getChuVi();
+    alert("chu vi :"+ chuVi+ "dien tích:"+ dienTich);
+    tinh.getRect();
+
+
+
+</script>
+</body>
